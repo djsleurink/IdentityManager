@@ -4,6 +4,21 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>djsleurink.IdentityManager</PackageId>
+    <Title>Identity Manager for ASP.NET Core / Blazor Server</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>DJ Sleurink</Authors>
+    <PackageProjectUrl>https://github.com/djsleurink/IdentityManager/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/djsleurink/IdentityManager/</RepositoryUrl>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Basic Identity Management tool for ASP.NET Core / Blazor server applications using Microsoft ASP.NET Core Identity </Description>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <Copyright>Copyright</Copyright>
+    <PackageTags>Identity, ASP.NET, APS.NET Core, Blazor, Blazor Server</PackageTags>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,4 +32,14 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 </Project>
