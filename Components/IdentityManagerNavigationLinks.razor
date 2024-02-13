@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+<link rel="stylesheet" href="_content/IdentityManager/css/bootstrap.min.css" />
+<div class="bootstrap-iso">
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="identitymanager/users">
+            <span class="oi oi-people" aria-hidden="true"></span> Users
+        </NavLink>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="identitymanager/createuser">
+                <span class="oi oi-plus" aria-hidden="true"></span> Create User
+            </NavLink>
+        </div>
+    </div>
+
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="identitymanager/roles">
+            <span class="oi oi-list" aria-hidden="true"></span> Roles
+        </NavLink>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="identitymanager/createrole">
+                <span class="oi oi-plus" aria-hidden="true"></span> Create Role
+            </NavLink>
+        </div>
+    </div>
+</div>
+@code {
+
+}

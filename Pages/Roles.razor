@@ -1,0 +1,74 @@
+﻿@page "/identitymanager/roles"
+<link rel="stylesheet" href="_content/IdentityManager/css/bootstrap.min.css" />
+
+<PageTitle>Roles</PageTitle>
+
+<div class="bootstrap-iso">
+    <h3><b>Roles</b></h3>  
+    <hr/>  
+
+
+    @if (roles == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+            <NavLink class="btn btn-primary" href="/identitymanager/createrole">
+                New
+            </NavLink>
+            <br />
+            <br />
+
+            <div class="row">
+                <div class="col3">
+                    Filter:
+                </div>
+                <div class="col9">
+                <input class="form-control" @bind-value:event="oninput" @bind-value="Filter" @onkeyup="GetRoles" />
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var role in roles)
+                    {
+                        <tr>
+                            <td>@role.Id</td>
+                            <td>@role.Name</td>
+                            <td><button type="button" class="btn btn-secondary" @onclick="() => DeleteRole(role.Id!)">Delete</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+    }
+
+</div>
+@code {
+    private IEnumerable<Role>? roles;
+    private string Filter { get; set; } = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetRoles();
+        base.OnInitialized();
+    }
+
+    private async void DeleteRole(string roleId)
+    {
+        var response = await manager.DeleteRole(roleId);
+        if (response.Success) await GetRoles();
+    }
+
+    private async Task GetRoles()
+    {
+        roles = await manager.GetRolesAsync(Filter);
+        StateHasChanged();
+    }
+}
