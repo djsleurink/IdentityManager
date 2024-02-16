@@ -1,3 +1,4 @@
+[![Nuget](https://img.shields.io/nuget/v/djsleurink.IdentityManager)](https://www.nuget.org/packages/djsleurink.IdentityManager)
 
 # Identity Manager for ASP.NET Core / Blazor Server 
 ## Simple yet effective
